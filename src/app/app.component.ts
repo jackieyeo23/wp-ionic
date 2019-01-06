@@ -16,15 +16,10 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
+      title: 'Categories',
+      url: '/categories',
       icon: 'list'
     },
-    {
-      title: 'Posts',
-      url: '/posts',
-      icon: 'filing'
-    }
   ];
 
   constructor(

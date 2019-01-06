@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { PostsService } from './../posts.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.page.scss'],
 })
 export class CategoriesPage implements OnInit {
-
-  constructor() { }
+  public categories$: Observable<any>;
+  public items: Array<{ title: string; note: string; icon: string }> = [];
+  constructor(private postSrvc: PostsService) {}
 
   ngOnInit() {
+    this.categories$ = this.postSrvc.fetchPostCategories();
   }
-
 }
