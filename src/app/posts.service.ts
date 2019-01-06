@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostsService {
   constructor(private http: HttpClient) {}
-  private baseURL = 'https://boxingtldr.com';
+  private baseURL = 'https://ambercreative.sg';
   fetchPosts() {
     return this.http
       .get(`${this.baseURL}/wp-json/wp/v2/posts?_embed`);

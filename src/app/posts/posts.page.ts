@@ -11,9 +11,13 @@ import { PostsService } from './../posts.service';
 })
 export class PostsPage implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private postSrvc: PostsService) {}
+  post$: Observable<any>;
 
   ngOnInit() {
+    this.post$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) => this.postSrvc.fetchPost(params.get('id')))
+    );
   }
 
 }
