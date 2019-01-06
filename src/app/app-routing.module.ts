@@ -12,9 +12,11 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+    path: 'home/:category',
+    loadChildren: './home/home.module#HomePageModule'
+  },
+  { path: 'posts/:id', loadChildren: './posts/posts.module#PostsPageModule' },
+  { path: 'categories', loadChildren: './categories/categories.module#CategoriesPageModule' }
 ];
 
 @NgModule({
